@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>my.example</groupId>
+    <artifactId>MyProject</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <artifactId>MyEAR</artifactId>
+  <packaging>ear</packaging>
+
+
+  <dependencies>
+    <!-- Andere Dependencies -->
+    <dependency>
+        <groupId>my.example</groupId>
+        <artifactId>MyEJB</artifactId>
+        <version>1.0.0</version>
+      <!-- Typangabe für Bekanntmachung in application.xml notwendig -->
+      <type>ejb</type>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <configuration>
+          <modules>
+            <!-- EJB-Modul in application.xml bekanntmachen -->
+            <ejbModule>
+              <groupId>my.example</groupId>
+              <artifactId>MyEJB</artifactId>
+            </ejbModule>
+          </modules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>my.example</groupId>
+  <artifactId>MyProjectWithProps</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <parent>
+    <groupId>my.example</groupId>
+    <artifactId>META-POM</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
+  <properties>
+    <!-- Defining another log4j version here, results in EJB and EAR module use the same version, cause its defined in the common parent
+    <apache-log4j.version>2.17.1</apache-log4j.version>-->
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>my.example</groupId>
+        <artifactId>MY-BOM</artifactId>
+        <version>1.0.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>MyEJB</module>
+    <module>MyEAR</module>
+  </modules>
+
+
+</project>
