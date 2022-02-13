@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
   <groupId>my.example</groupId>
-  <artifactId>MyProject</artifactId>
+  <artifactId>MyProjectWithProps</artifactId>
   <version>1.0.0</version>
   </parent>
-  <artifactId>MyEJB</artifactId>
+  <artifactId>MyEJBWithProps</artifactId>
   <packaging>ejb</packaging>
   <properties>
   <!-- Defining another version in the ejb-module results in th the situation that the EAR containts the one from the META-POM (2.17.0) and not the version of the EJB (2.17.1) - this may be uninutive but the way Maven resolves" -->

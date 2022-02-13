@@ -29,8 +29,8 @@
   </dependencyManagement>
 
   <modules>
-    <module>MyEJB</module>
-    <module>MyEAR</module>
+    <module>MyEJBWithProps</module>
+    <module>MyEARWithProps</module>
   </modules>
 
 
