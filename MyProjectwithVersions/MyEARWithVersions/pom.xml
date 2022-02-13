@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>my.example</groupId>
-    <artifactId>MyProject</artifactId>
+    <artifactId>MyProjectWithVersions</artifactId>
     <version>1.0.0</version>
   </parent>
 
-  <artifactId>MyEAR</artifactId>
+  <artifactId>MyEARWithVersions</artifactId>
   <packaging>ear</packaging>
 
 
@@ -15,7 +15,7 @@
     <!-- Andere Dependencies -->
     <dependency>
         <groupId>my.example</groupId>
-        <artifactId>MyEJB</artifactId>
+        <artifactId>MyEJBWithVersions</artifactId>
         <version>1.0.0</version>
       <!-- Typangabe für Bekanntmachung in application.xml notwendig -->
       <type>ejb</type>
@@ -32,7 +32,7 @@
             <!-- EJB-Modul in application.xml bekanntmachen -->
             <ejbModule>
               <groupId>my.example</groupId>
-              <artifactId>MyEJB</artifactId>
+              <artifactId>MyEJBWithVersions</artifactId>
             </ejbModule>
           </modules>
         </configuration>
