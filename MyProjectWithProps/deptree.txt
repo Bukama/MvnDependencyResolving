@@ -1,0 +1,33 @@
+
+Output of dependency:tree when overwriting the log4j-version using a property in the EJB-Module
+
+my.example:MyProject:pom:1.0.0
+my.example:MyEJB:ejb:1.0.0
++- org.apache.logging.log4j:log4j-api:jar:2.17.1:compile
+\- org.apache.logging.log4j:log4j-core:jar:2.17.1:compile
+my.example:MyEAR:ear:1.0.0
+\- my.example:MyEJB:ejb:1.0.0:compile
+   +- org.apache.logging.log4j:log4j-api:jar:2.17.0:compile
+   \- org.apache.logging.log4j:log4j-core:jar:2.17.0:compile
+
+
+Output of dependency:tree when overwriting the log4j-version using a property in the parent
+
+mvn compile dependency:tree -DoutputFile=D:\Github\MvnDependencyResolving\MyProject\deptree.txt -DappendOutput=truemy.example:MyProject:pom:1.0.0
+my.example:MyEJB:ejb:1.0.0
++- org.apache.logging.log4j:log4j-api:jar:2.17.1:compile
+\- org.apache.logging.log4j:log4j-core:jar:2.17.1:compile
+my.example:MyEAR:ear:1.0.0
+\- my.example:MyEJB:ejb:1.0.0:compile
+   +- org.apache.logging.log4j:log4j-api:jar:2.17.1:compile
+   \- org.apache.logging.log4j:log4j-core:jar:2.17.1:compile
+
+
+
+
+-----
+
+dependency:tree does not read modules from reactor
+
+
+https://www.mail-archive.com/users@maven.apache.org/msg104341.html
